@@ -1,0 +1,8 @@
+export function c(n, ...arg) {
+  let spacer = '-->'
+
+  if (isFinite(n) && n < 10000 && n != 0)
+    console.log(`${n + spacer}`, ...arg)
+  else
+    console.log(n, ...arg)
+}
