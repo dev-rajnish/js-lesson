@@ -1,4 +1,4 @@
-import {c} from `./see`
+import { c } from `./see`
 
 let single = 'single quote string';
 
@@ -9,7 +9,7 @@ let backticks = `backticks string`
 //* Backticks expression in string
 
 let expString = `${backticks} in : expString`
-c(12,expString);
+c(12, expString);
 
 //* Backticks allow multi line string
 let multiLine = `
@@ -18,7 +18,7 @@ Guests :
 *Pete
 *Mary
 `;
-c(21,multiLine)
+c(21, multiLine)
 
 //* String Length is a numeric property
 c(`24-->`, "Hello".length)
@@ -45,7 +45,7 @@ c(`42-->`, str[-2]); // -> undefined
 // for...of(){}
 
 for (let char of str) {
-  c(48,char)
+  c(48, char)
 }
 
 //* string can't be changed
@@ -82,8 +82,28 @@ let target = 'as'
 let pos = -1;
 let counter = 0;
 
-while ( (pos = strAs.indexOf(target,pos + 1)) != -1 ) {
-c(86,pos , ++counter)
+while ((pos = strAs.indexOf(target, pos + 1)) != -1) {
+  c(86, pos, ++counter)
 }
-c(88,`"as" found ${counter} Times`)
-c()
+c(88, `"as" found ${counter} Times`)
+
+//*[*] includes, startswith, endswith
+
+let strinst = 'rajnish is a man'
+c(93, strinst.includes('man'))
+c(94, strinst.startsWith('raj'))
+c(95, strinst.endsWith('an'))
+
+//?[*] slice -ve -> yes, substring -ve -> 0, substr() -ve -> yes
+let strsss = "He is the GOAT"
+
+c(100, strsss.slice(6, 9), '|', strsss.slice(5), '|', strsss.slice(-8, -5))
+c(101, strsss.substring(-3, 4), '|', strsss.substring(0, 1))
+c(102, strsss.substr(6, 3))
+
+//.[*] trim and repeat
+
+let strtr = "  i am with space  "
+c(107, strtr.trim())
+
+c(109, 'hmm '.repeat(3))
